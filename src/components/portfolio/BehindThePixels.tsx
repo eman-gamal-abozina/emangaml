@@ -236,9 +236,11 @@ export function BehindThePixels() {
           className="pointer-events-none absolute bottom-10 left-4 h-5 w-5 text-lavender/50"
         />
 
-        <div className="grid grid-cols-1 gap-y-12 gap-x-8 sm:grid-cols-2 sm:gap-y-16 md:grid-cols-10 md:auto-rows-[1px] md:gap-y-10">
+        <div className="columns-1 gap-8 sm:columns-2 lg:columns-3 xl:columns-4 [column-fill:_balance]">
           {polaroids.map((p, i) => (
-            <PolaroidCard key={i} p={p} i={i} />
+            <div key={i} className="mb-12 break-inside-avoid">
+              <PolaroidCard p={p} i={i} />
+            </div>
           ))}
         </div>
       </div>
