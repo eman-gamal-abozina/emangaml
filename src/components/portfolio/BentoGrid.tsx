@@ -1,10 +1,7 @@
 import {
   Award,
-  BookOpen,
   Brain,
   Code2,
-  Coffee,
-  Database,
   Figma,
   GraduationCap,
   Layers,
@@ -213,7 +210,7 @@ export function BentoGrid() {
       {/* Soul section */}
       <div id="story" className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-6 md:gap-6">
         {/* CARD D — Story */}
-        <Reveal className="md:col-span-4">
+        <Reveal className="md:col-span-6">
           <div className="glass-card relative h-full overflow-hidden p-8 md:p-10">
             <div
               className="pointer-events-none absolute -top-32 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full opacity-50"
@@ -238,56 +235,8 @@ export function BentoGrid() {
             </div>
           </div>
         </Reveal>
-
-        {/* CARD E — Fun facts */}
-        <Reveal i={1} className="md:col-span-2">
-          <div className="grid h-full grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-1">
-            <FunFact
-              icon="🌌"
-              title="Inspired by the Sky"
-              body="Whenever I'm stuck on a stubborn Node.js event loop or Figma layout, looking at the sky resets my visual hierarchy."
-            />
-            <FunFact
-              icon={<Coffee className="h-5 w-5" />}
-              title="Obsessed with Milk Tea"
-              body="Fueled by Karak. My code and designs run on a steady stream of it."
-            />
-            <FunFact
-              icon={<Database className="h-5 w-5" />}
-              title="Love Coding"
-              body="Unique dopamine hit when a Figma design transitions perfectly into a clean working app."
-            />
-            <FunFact
-              icon={<BookOpen className="h-5 w-5" />}
-              title="Books I Love"
-              body="User Psychology, HCI, and Clean Code principles — always on my desk."
-            />
-          </div>
-        </Reveal>
       </div>
     </section>
-  );
-}
-
-function FunFact({
-  icon,
-  title,
-  body,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  body: string;
-}) {
-  return (
-    <div className="glass-card group relative h-full overflow-hidden p-5">
-      <div className="flex items-center gap-3">
-        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-lavender ring-1 ring-primary/30 transition group-hover:bg-primary/25">
-          {icon}
-        </span>
-        <div className="text-sm font-semibold text-foreground">{title}</div>
-      </div>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
-    </div>
   );
 }
 
