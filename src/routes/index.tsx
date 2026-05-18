@@ -4,6 +4,7 @@ import { CursorGlow } from "@/components/portfolio/CursorGlow";
 import { Nav } from "@/components/portfolio/Nav";
 import { Hero } from "@/components/portfolio/Hero";
 import { BentoGrid } from "@/components/portfolio/BentoGrid";
+import { BehindThePixels } from "@/components/portfolio/BehindThePixels";
 import { Footer } from "@/components/portfolio/Footer";
 
 export const Route = createFileRoute("/")({
@@ -18,6 +19,7 @@ function Index() {
       <Nav />
       <Hero />
       <BentoGrid />
+      <BehindThePixels />
       <Footer />
     </main>
   );
