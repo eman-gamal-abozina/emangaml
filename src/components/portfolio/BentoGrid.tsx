@@ -1,6 +1,4 @@
 import {
-  Award,
-  Brain,
   Code2,
   Figma,
   GraduationCap,
@@ -10,36 +8,37 @@ import {
   Sparkles,
   Star,
   Stars,
-  Trophy,
+  Users,
   Wand2,
+  Crown,
 } from "lucide-react";
 import { Reveal } from "./Reveal";
 
 const skills = [
-  "UI/UX Design",
-  "Interaction Design",
-  "Information Architecture",
-  "User Research",
-  "Heuristic Evaluation",
-  "Responsive Web Design",
-  "Problem Solving",
+  "UX Audit",
+  "UX Research",
+  "Competitive Analysis",
+  "User Flow",
+  "Prototyping",
+  "Design System",
+  "Auto Layout",
 ];
 
 const stacks = [
   {
     label: "Design",
     icon: Palette,
-    items: ["Figma", "Adobe XD"],
+    items: ["Figma"],
+  },
+  {
+    label: "Frontend",
+    icon: Code2,
+    items: ["HTML", "CSS"],
   },
   {
     label: "Backend & Database",
     icon: Server,
     items: ["Node.js", "Express.js", "MongoDB"],
-  },
-  {
-    label: "Frontend & Logic",
-    icon: Code2,
-    items: ["JavaScript", "Angular", "PHP", "Flask"],
   },
 ];
 
@@ -50,19 +49,19 @@ const milestones = [
     meta: "Benha University · Expected 2027",
   },
   {
-    icon: Brain,
-    title: "Former Head & Vice Head of Problem Solving",
-    meta: "ECPC background",
+    icon: Users,
+    title: "Technical UI/UX Designer",
+    meta: "helping others on projects",
   },
   {
-    icon: Trophy,
-    title: "Best Project — JavaScript Web Development Track",
-    meta: "Award Winner · March 2026",
+    icon: Sparkles,
+    title: "Programming Instructor",
+    meta: "teaching kids programming",
   },
   {
-    icon: Award,
-    title: "Certified AI Trainee",
-    meta: "80-Hour AI & ML Program · NTI & Huawei",
+    icon: Crown,
+    title: "DEPI Graduate",
+    meta: "UI/UX Team Leader",
   },
 ];
 

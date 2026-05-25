@@ -3,6 +3,7 @@ import { AmbientBackground } from "@/components/portfolio/AmbientBackground";
 import { CursorGlow } from "@/components/portfolio/CursorGlow";
 import { Nav } from "@/components/portfolio/Nav";
 import { Hero } from "@/components/portfolio/Hero";
+import { Projects } from "@/components/portfolio/Projects";
 import { BentoGrid } from "@/components/portfolio/BentoGrid";
 import { BehindThePixels } from "@/components/portfolio/BehindThePixels";
 import { Footer } from "@/components/portfolio/Footer";
@@ -18,6 +19,7 @@ function Index() {
       <CursorGlow />
       <Nav />
       <Hero />
+      <Projects />
       <BentoGrid />
       <BehindThePixels />
       <Footer />
