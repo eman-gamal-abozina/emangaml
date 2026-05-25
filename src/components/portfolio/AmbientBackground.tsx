@@ -27,7 +27,7 @@ export function AmbientBackground() {
   return (
     <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       {/* Animated grid */}
-      <div className="absolute inset-0 grid-bg animate-grid opacity-40" />
+      <div className="absolute inset-0 grid-bg animate-grid opacity-80" />
       {/* Vignette */}
       <div
         className="absolute inset-0"
