@@ -24,8 +24,8 @@ const polaroids: Polaroid[] = [
   {
     src: bookshop,
     alt: "Browsing books at a street bookshop",
-    caption: "this face = when you accidentally walk into a bookshop",
-    scribble: "📚 lost again",
+    caption: "I love building products people actually enjoy using.",
+    scribble: "✦ building",
     tilt: -4,
     tape: "tl",
     className: "md:col-span-4 md:row-span-2",
@@ -33,8 +33,8 @@ const polaroids: Polaroid[] = [
   {
     src: books,
     alt: "Reading in a quiet library corner",
-    caption: "a good book + a quiet corner = my kind of party",
-    scribble: "reading fuels imagination",
+    caption: "I teach kids programming — their curiosity is contagious.",
+    scribble: "teaching kids ♥",
     tilt: 3,
     tape: "tr",
     className: "md:col-span-3 md:row-span-2",
@@ -42,8 +42,8 @@ const polaroids: Polaroid[] = [
   {
     src: laptop,
     alt: "Laptop with stickers and Turkish coffee",
-    caption: "engineer mode: ON · caffeine: required",
-    scribble: "be positive, like a proton",
+    caption: "I enjoy helping people learn design from zero.",
+    scribble: "design mentor",
     tilt: -2,
     tape: "top",
     className: "md:col-span-3 md:row-span-2",
@@ -51,8 +51,8 @@ const polaroids: Polaroid[] = [
   {
     src: sky,
     alt: "Sky over the Nile",
-    caption: "whenever I'm stuck, I look at the sky — it resets my visual hierarchy",
-    scribble: "✶ debug = look up",
+    caption: "Whenever I'm stuck, I look at the sky — it resets my visual hierarchy.",
+    scribble: "✶ reset",
     tilt: 2,
     tape: "top",
     className: "md:col-span-5 md:row-span-2",
@@ -60,8 +60,8 @@ const polaroids: Polaroid[] = [
   {
     src: coffee,
     alt: "Cup of Turkish coffee",
-    caption: "compiling… powered by Turkish coffee",
-    scribble: "1 cup = 1 bug fixed",
+    caption: "I'm passionate about clean, calm UI.",
+    scribble: "less, but better",
     tilt: 4,
     tape: "tl",
     className: "md:col-span-2 md:row-span-2",
@@ -69,8 +69,8 @@ const polaroids: Polaroid[] = [
   {
     src: walk,
     alt: "Walk under flame trees in Egypt",
-    caption: "going for a walk + taking photos of nature = my reset button",
-    scribble: "nature therapy",
+    caption: "Long walks are where my best layouts are born.",
+    scribble: "walk → ideas",
     tilt: -3,
     tape: "tr",
     className: "md:col-span-3 md:row-span-2",
@@ -78,8 +78,8 @@ const polaroids: Polaroid[] = [
   {
     src: juice,
     alt: "Holding sugarcane juice in a car",
-    caption: "not sure how I'd survive summer without sugarcane juice",
-    scribble: "summer survival kit",
+    caption: "I love creative storytelling — every screen is a tiny scene.",
+    scribble: "story first",
     tilt: 5,
     tape: "top",
     className: "md:col-span-3 md:row-span-2",
@@ -87,8 +87,8 @@ const polaroids: Polaroid[] = [
   {
     src: coding,
     alt: "Code on a screen at night",
-    caption: "like every dev ever — hours of coding & one tiny error ruins everything",
-    scribble: "after 2 hours coding…",
+    caption: "Design + code, late nights — that's where the magic clicks.",
+    scribble: "ship it ✦",
     tilt: -4,
     tape: "tl",
     className: "md:col-span-4 md:row-span-2",
@@ -211,15 +211,18 @@ export function BehindThePixels() {
           <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-lavender">
             <Heart className="h-3.5 w-3.5" /> Behind the pixels
           </span>
-          <h2 className="mt-5 text-4xl font-semibold tracking-tight md:text-5xl">
-            <span className="text-gradient">Little moments</span>{" "}
-            <span className="text-glow italic font-light">that shape my craft</span>
+          <h2
+            className="mt-5 text-5xl tracking-tight md:text-7xl"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            <span className="text-gradient">Fun facts</span>{" "}
+            <span className="text-glow italic">about me</span>
           </h2>
           <p
             className="mt-5 text-2xl text-foreground/85"
             style={{ fontFamily: "var(--font-hand)" }}
           >
-            a quiet scrapbook — coffee, books, sky, code & everything in between.
+            a scrapbook of the little things behind the designer ✦
           </p>
         </div>
       </Reveal>
