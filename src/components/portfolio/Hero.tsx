@@ -21,28 +21,28 @@ export function Hero() {
 
       {/* Stage */}
       <div className="relative flex w-full items-center justify-center">
-        {/* HUGE name in background */}
+        {/* HUGE name in background — single horizontal line */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.2, 0.8, 0.2, 1] }}
           aria-label="Eman Gamal"
-          className="pointer-events-none absolute inset-x-0 top-2 z-0 select-none text-center font-normal leading-[0.85] tracking-tight"
+          className="pointer-events-none absolute inset-x-0 top-1/2 z-0 -translate-y-1/2 select-none whitespace-nowrap text-center font-normal leading-[0.85] tracking-[-0.03em]"
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(5rem, 22vw, 22rem)",
+            fontSize: "clamp(3.5rem, 17vw, 16rem)",
           }}
         >
           <span className="text-gradient italic">Eman</span>{" "}
           <span className="text-glow">Gamal</span>
         </motion.h1>
 
-        {/* Portrait, centered, layered in front */}
+        {/* Portrait, centered, layered in front — larger & more prominent */}
         <motion.div
           initial={{ opacity: 0, scale: 0.94, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.35, ease: [0.2, 0.8, 0.2, 1] }}
-          className="relative z-10 mt-24 flex w-full max-w-[28rem] flex-col items-center md:mt-32 lg:max-w-[32rem]"
+          className="relative z-10 mt-16 flex w-full max-w-[34rem] flex-col items-center md:mt-20 lg:max-w-[40rem] xl:max-w-[46rem]"
         >
           {/* Tag above portrait */}
           <motion.div
@@ -78,7 +78,7 @@ export function Hero() {
             <img
               src={portrait}
               alt="Eman Gamal — UI/UX Designer"
-              className="relative h-auto w-full max-h-[68vh] object-contain drop-shadow-[0_30px_60px_oklch(0_0_0/0.6)]"
+              className="relative h-auto w-full max-h-[82vh] object-contain drop-shadow-[0_30px_60px_oklch(0_0_0/0.6)]"
             />
           </div>
         </motion.div>
