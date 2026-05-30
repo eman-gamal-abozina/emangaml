@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Heart, Sparkles } from "lucide-react";
+import { Smile, Sparkles, Star, Flower2, Heart } from "lucide-react";
 import { Reveal } from "./Reveal";
 import books from "@/assets/fun-books.jpg";
 import bookshop from "@/assets/fun-bookshop.jpg";
@@ -115,15 +115,22 @@ function Tape({ position }: { position: "tl" | "tr" | "top" }) {
       transform: "translateX(-50%) rotate(-2deg)",
     },
   };
+  // Alternate warm masking-tape colors (peach + mint) for scrapbook vibe
+  const tapeBg =
+    position === "tr"
+      ? "linear-gradient(180deg, #ffe9a8cc, #f6cf7ab3)"
+      : position === "tl"
+        ? "linear-gradient(180deg, #ffd0d6cc, #f7a8b3b3)"
+        : "linear-gradient(180deg, #c8eee3cc, #9dd7c9b3)";
   return (
     <span
       className={base}
       style={{
         ...styles[position],
-        background:
-          "linear-gradient(180deg, oklch(0.85 0.08 305 / 0.55), oklch(0.78 0.14 305 / 0.35))",
+        background: tapeBg,
+        mixBlendMode: "normal",
         boxShadow:
-          "0 4px 10px oklch(0 0 0 / 0.4), inset 0 0 0 1px oklch(1 0 0 / 0.08)",
+          "0 4px 8px rgba(0,0,0,0.12), inset 0 0 0 1px rgba(255,255,255,0.4)",
       }}
     />
   );
@@ -139,51 +146,27 @@ function PolaroidCard({ p, i }: { p: Polaroid; i: number }) {
         className="group relative mx-auto h-full w-full max-w-md"
         style={{ rotate: `${p.tilt}deg` }}
       >
-        {/* Glow halo */}
         <div
-          className="pointer-events-none absolute -inset-6 -z-10 rounded-[2rem] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+          className="relative flex h-full flex-col rounded-[6px] p-3 pb-5 shadow-[0_14px_30px_rgba(60,40,80,0.18)] ring-1 ring-black/5 transition-all duration-500"
           style={{
             background:
-              "radial-gradient(ellipse at center, oklch(0.72 0.2 300 / 0.55), transparent 70%)",
-          }}
-        />
-
-        <div
-          className="relative flex h-full flex-col rounded-[14px] p-3 pb-4 shadow-[0_20px_50px_oklch(0_0_0/0.55)] ring-1 ring-primary/20 transition-all duration-500 group-hover:ring-primary/60"
-          style={{
-            background:
-              "linear-gradient(180deg, oklch(0.96 0.01 290 / 0.97), oklch(0.9 0.015 295 / 0.94))",
+              "linear-gradient(180deg, #ffffff 0%, #fdfaf3 100%)",
           }}
         >
           {p.tape && <Tape position={p.tape} />}
 
           {/* Image */}
-          <div className="relative overflow-hidden rounded-[6px] bg-black">
+          <div className="relative overflow-hidden rounded-[4px] bg-neutral-200">
             <img
               src={p.src}
               alt={p.alt}
               loading="lazy"
               className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            {/* purple cinematic tint */}
-            <div
-              className="pointer-events-none absolute inset-0 mix-blend-soft-light opacity-70"
-              style={{
-                background:
-                  "linear-gradient(180deg, oklch(0.78 0.14 305 / 0.25), oklch(0.4 0.12 290 / 0.35))",
-              }}
-            />
-            {/* film grain edge */}
-            <div
-              className="pointer-events-none absolute inset-0 opacity-30"
-              style={{
-                boxShadow: "inset 0 0 40px oklch(0 0 0 / 0.6)",
-              }}
-            />
             {p.scribble && (
               <span
-                className="absolute left-3 top-3 rounded-full bg-background/80 px-2.5 py-1 text-[11px] font-medium text-lavender ring-1 ring-primary/40 backdrop-blur-md"
-                style={{ fontFamily: "var(--font-hand)", fontSize: 14 }}
+                className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[#0f8a7d] ring-1 ring-[#0f8a7d]/30 backdrop-blur-md"
+                style={{ fontFamily: "var(--font-hand)", fontSize: 18, fontWeight: 600 }}
               >
                 {p.scribble}
               </span>
@@ -192,8 +175,13 @@ function PolaroidCard({ p, i }: { p: Polaroid; i: number }) {
 
           {/* Caption */}
           <figcaption
-            className="mt-3 px-1 text-center leading-tight text-[oklch(0.25_0.03_285)]"
-            style={{ fontFamily: "var(--font-hand)", fontSize: 20 }}
+            className="mt-3 px-1 text-center leading-tight"
+            style={{
+              fontFamily: "var(--font-hand)",
+              fontSize: 22,
+              color: i % 2 === 0 ? "#e84a8a" : "#0f8a7d",
+              fontWeight: 600,
+            }}
           >
             {p.caption}
           </figcaption>
@@ -205,40 +193,91 @@ function PolaroidCard({ p, i }: { p: Polaroid; i: number }) {
 
 export function BehindThePixels() {
   return (
-    <section className="relative mx-auto max-w-7xl px-6 pb-24 md:pb-32">
-      <Reveal>
-        <div className="mx-auto mb-14 max-w-2xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs font-medium text-lavender">
-            <Heart className="h-3.5 w-3.5" /> Behind the pixels
-          </span>
-          <h2
-            className="mt-5 text-5xl tracking-tight md:text-7xl"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            <span className="text-gradient">Fun facts</span>{" "}
-            <span className="text-glow italic">about me</span>
-          </h2>
-          <p
-            className="mt-5 text-2xl text-foreground/85"
-            style={{ fontFamily: "var(--font-hand)" }}
-          >
-            a scrapbook of the little things behind the designer ✦
-          </p>
-        </div>
-      </Reveal>
-
-      {/* Scrapbook board */}
-      <div className="relative">
-        {/* soft ambient sparkle */}
-        <Sparkles
+    <section className="relative mx-auto max-w-7xl px-4 pb-24 md:pb-32 sm:px-6">
+      {/* Cream paper board */}
+      <div
+        className="relative overflow-hidden rounded-[28px] px-5 py-14 sm:px-10 sm:py-20 md:px-16"
+        style={{
+          background:
+            "radial-gradient(1200px 600px at 10% 0%, #fff7e8 0%, #fdf5e6 30%, #f9efd9 100%)",
+          boxShadow:
+            "0 30px 80px rgba(20,10,40,0.45), inset 0 0 0 1px rgba(0,0,0,0.05)",
+        }}
+      >
+        {/* Subtle paper grid */}
+        <div
           aria-hidden
-          className="pointer-events-none absolute -top-6 right-10 h-6 w-6 text-lavender/60"
-        />
-        <Sparkles
-          aria-hidden
-          className="pointer-events-none absolute bottom-10 left-4 h-5 w-5 text-lavender/50"
+          className="pointer-events-none absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#7a5a3a 1px, transparent 1px), linear-gradient(90deg, #7a5a3a 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+          }}
         />
 
+        {/* Doodle decorations */}
+        <Star className="pointer-events-none absolute right-12 top-10 h-7 w-7 text-[#3fb6a3]" strokeWidth={1.5} />
+        <Sparkles className="pointer-events-none absolute left-10 top-32 h-5 w-5 text-[#e84a8a]" />
+        <Flower2 className="pointer-events-none absolute right-16 top-56 h-7 w-7 text-[#e84a8a]" strokeWidth={1.5} />
+        <Heart className="pointer-events-none absolute left-20 bottom-24 h-6 w-6 text-[#a4d96b] fill-[#a4d96b]" />
+        <Sparkles className="pointer-events-none absolute right-24 bottom-32 h-5 w-5 text-[#3fb6a3]" />
+
+        {/* Header: notebook page */}
+        <Reveal>
+          <div className="relative mx-auto mb-16 grid max-w-5xl items-start gap-8 md:grid-cols-[1.1fr_1fr]">
+            <motion.div
+              initial={{ rotate: -2 }}
+              whileHover={{ rotate: 0 }}
+              className="relative rounded-[6px] bg-white px-7 pb-8 pt-10 shadow-[0_14px_30px_rgba(60,40,80,0.18)]"
+              style={{
+                background:
+                  "repeating-linear-gradient(180deg, #ffffff 0px, #ffffff 28px, #eaf4f1 29px)",
+              }}
+            >
+              {/* binder rings */}
+              <div className="absolute left-6 top-0 flex -translate-y-1/2 gap-3">
+                <span className="block h-5 w-5 rounded-full bg-[#3fb6a3] ring-2 ring-white shadow" />
+                <span className="block h-5 w-5 rounded-full bg-[#3fb6a3]/70 ring-2 ring-white shadow" />
+              </div>
+              <h2
+                className="text-5xl leading-none text-[#0f8a7d] md:text-6xl"
+                style={{ fontFamily: "var(--font-hand)", fontWeight: 700 }}
+              >
+                FUN Facts
+                <br />
+                <span className="text-[#1aa094]">About Me</span>
+              </h2>
+              <p
+                className="mt-5 max-w-md text-[17px] leading-[1.5] text-[#2b2b2b]"
+                style={{ fontFamily: "var(--font-hand)" }}
+              >
+                UX/UI Designer with a tiny case of imposter syndrome — just a creative
+                soul with a passion for coding, books, art, and travelling. Nature is
+                my true kingdom. Currently getting lost in the pages of a good book,
+                marketing to my community, or experimenting with branding.
+              </p>
+            </motion.div>
+
+            {/* Smile sticker */}
+            <div className="relative hidden md:block">
+              <motion.div
+                initial={{ rotate: 8 }}
+                whileHover={{ rotate: 0, scale: 1.05 }}
+                className="absolute right-6 top-2 grid h-28 w-28 place-items-center rounded-full border-[3px] border-[#e84a8a] bg-white/70 text-[#e84a8a]"
+              >
+                <Smile className="h-14 w-14" strokeWidth={1.6} />
+              </motion.div>
+              <span
+                className="absolute right-44 top-20 text-[#3fb6a3]"
+                style={{ fontFamily: "var(--font-hand)", fontSize: 22 }}
+              >
+                ✦ a little scrapbook ✦
+              </span>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Scrapbook polaroids */}
         <div className="columns-1 gap-8 sm:columns-2 lg:columns-3 xl:columns-4 [column-fill:_balance]">
           {polaroids.map((p, i) => (
             <div key={i} className="mb-12 break-inside-avoid">
