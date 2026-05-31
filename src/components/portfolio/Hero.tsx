@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import portrait from "@/assets/eman-portrait.png";
+import portrait from "@/assets/eman-portrait2.png";
 
 export function Hero() {
   return (
@@ -30,7 +30,9 @@ export function Hero() {
           className="pointer-events-none absolute inset-x-0 top-1/2 z-0 -translate-y-1/2 select-none whitespace-nowrap text-center font-normal leading-[0.85] tracking-[-0.03em]"
           style={{
             fontFamily: "var(--font-display)",
-            fontSize: "clamp(3.5rem, 17vw, 16rem)",
+            fontSize: "clamp(4rem, 20vw, 18rem)",
+            fontWeight: "600",
+            wordSpacing: "2rem",
           }}
         >
           <span className="text-gradient italic">Eman</span>{" "}

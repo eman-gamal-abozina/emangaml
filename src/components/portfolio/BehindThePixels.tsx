@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Smile, Sparkles, Star, Flower2, Heart } from "lucide-react";
 import { Reveal } from "./Reveal";
-import books from "@/assets/fun-books.jpg";
+import competitions from "@/assets/5827835863067464157.jpg";
 import bookshop from "@/assets/fun-bookshop.jpg";
 import laptop from "@/assets/fun-laptop.jpg";
-import coffee from "@/assets/fun-coffee.jpg";
+import events from "@/assets/5827835863067464233.jpg";
 import juice from "@/assets/fun-juice.jpg";
-import walk from "@/assets/fun-walk.jpg";
+import journal from "@/assets/5827835863067464280.jpg";
 import sky from "@/assets/fun-sky.jpg";
 import coding from "@/assets/fun-coding.jpg";
 
@@ -31,10 +31,10 @@ const polaroids: Polaroid[] = [
     className: "md:col-span-4 md:row-span-2",
   },
   {
-    src: books,
-    alt: "Reading in a quiet library corner",
-    caption: "Reading fuels my imagination. A good book and a quiet corner = my kind of party.",
-    scribble: "Quiet Corner Club",
+    src: competitions,
+    alt: "Naca Space Apps",
+    caption: "enjoy competitions and the exciting atmosphere they bring.",
+    scribble: "Naca Space Apps",
     tilt: 3,
     tape: "tr",
     className: "md:col-span-3 md:row-span-2",
@@ -42,7 +42,7 @@ const polaroids: Polaroid[] = [
   {
     src: laptop,
     alt: "Laptop with stickers and Turkish coffee",
-    caption: "I'm not just a coffee lover — I love making it. The steps, the smell, the sound, it all makes me feel calm and happy.",
+    caption: "I'm not just a coffee lover . makes me feel calm and happy.",
     scribble: "Coffee Ritual ✿",
     tilt: -2,
     tape: "top",
@@ -58,19 +58,19 @@ const polaroids: Polaroid[] = [
     className: "md:col-span-5 md:row-span-2",
   },
   {
-    src: coffee,
-    alt: "Cup of Turkish coffee",
-    caption: "Tiny cup, big mood — my favorite kind of pause.",
-    scribble: "Slow Sips",
+    src: events,
+    alt: "events",
+    caption: "enjoy attending events - gives me energy to complete this dummy track",
+    scribble: "events power",
     tilt: 4,
     tape: "tl",
     className: "md:col-span-2 md:row-span-2",
   },
   {
-    src: walk,
+    src: journal,
     alt: "Walk under flame trees in Egypt",
-    caption: "Flame trees, golden hour, and the quiet kind of joy.",
-    scribble: "Golden Hour",
+    caption: "I journal each day - that is how a take off my thoughts",
+    scribble: "Journaling",
     tilt: -3,
     tape: "tr",
     className: "md:col-span-3 md:row-span-2",

@@ -14,16 +14,6 @@ type Project = {
 const projects: Project[] = [
   {
     index: "01",
-    title: "Kafehaty App",
-    category: "UI/UX · UI Design",
-    description:
-      "Coffee mobile app combine your fav coffee shops at one place just choose while lying on sofa",
-      cover: "src/assets/cover0.jpg",
-    accent: "linear-gradient(135deg, oklch(0.45 0.25 310), oklch(0.32 0.2 290))",
-        link: "https://www.behance.net/gallery/237344775/Coffee-Shop-Mobile-App"
-  },
-  {
-    index: "02",
     title: "Wa3e App",
     category: "Team Work",
     description:
@@ -32,6 +22,16 @@ const projects: Project[] = [
     accent: "linear-gradient(135deg, oklch(0.5 0.22 320), oklch(0.3 0.18 280))",
         link: "https://www.behance.net/gallery/233388907/Wa3ei-(ADHD-App)"
 
+  },
+   {
+    index: "02",
+    title: "Kafehaty App",
+    category: "UI/UX · UI Design",
+    description:
+      "Coffee mobile app combine your fav coffee shops at one place just choose while lying on sofa",
+      cover: "src/assets/cover0.jpg",
+    accent: "linear-gradient(135deg, oklch(0.45 0.25 310), oklch(0.32 0.2 290))",
+        link: "https://www.behance.net/gallery/237344775/Coffee-Shop-Mobile-App"
   },
   {
     index: "03",
@@ -44,6 +44,34 @@ const projects: Project[] = [
         link: "https://www.behance.net/gallery/244582277/San3a(Craftsmen-App)"
 
   },
+  {
+      index: "04",
+    title: "Yummy Circles",
+    category: "Landing Page",
+    description:
+      "Yummy Circles a tasty Donuts landing page with clean and colorful UI",
+      cover: "src/assets/coverDonuts.jpg",
+    accent: "linear-gradient(135deg, oklch(0.45 0.25 310), oklch(0.32 0.2 290))",
+        link: "https://www.behance.net/gallery/230220809/Donunts-landing-page"
+  },
+
+  {
+    index: "04",
+    title: "SAn3a",
+    category: "Team Leader - Case study",
+    description:
+      "helps clients quickly find skilled and trusted craftsmen",
+      cover:"src/assets/slice2.jpg",
+    accent: "linear-gradient(135deg, oklch(0.42 0.24 305), oklch(0.28 0.16 300))",
+        link: "https://www.behance.net/gallery/244582277/San3a(Craftsmen-App)"
+
+  },
+
+  
+  
+
+
+  
 ];
 
 export function Projects() {
@@ -84,10 +112,15 @@ export function Projects() {
 function ProjectCard({ project, alt }: { project: Project; alt: boolean }) {
   return (
     <article
-      className={`group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-primary/15 bg-card/60 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_30px_80px_oklch(0.4_0.25_308/0.35)] ${
-        alt ? "md:mt-10" : ""
-      }`}
-    >
+      // className={`group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-primary/15 bg-card/60 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_30px_80px_oklch(0.4_0.25_308/0.35)] ${
+      //   alt ? "md:mt-10" : ""
+      // }`}
+  
+     className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-primary/15 bg-card/60 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_30px_80px_oklch(0.4_0.25_308/0.35)]"
+     >
+
+
+  
       {/* Cover */}
       <div className="relative aspect-[4/3] overflow-hidden">
         {project.cover ? (
