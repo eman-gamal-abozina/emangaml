@@ -191,7 +191,7 @@ git init
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin رابط_الر
+git remote add origin https://github.com/eman-gamal-abozina/emangaml.git
 git push -u origin main
 
 */
