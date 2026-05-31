@@ -8,32 +8,41 @@ type Project = {
   description: string;
   cover?: string;
   accent: string; // gradient
+  link: string;
 };
 
 const projects: Project[] = [
   {
     index: "01",
-    title: "Project Title",
-    category: "UI/UX · Case Study",
+    title: "Kafehaty App",
+    category: "UI/UX · UI Design",
     description:
-      "A short, punchy description of the project — the problem, the craft, the outcome.",
+      "Coffee mobile app combine your fav coffee shops at one place just choose while lying on sofa",
+      cover: "src/assets/cover0.jpg",
     accent: "linear-gradient(135deg, oklch(0.45 0.25 310), oklch(0.32 0.2 290))",
+        link: "https://www.behance.net/gallery/237344775/Coffee-Shop-Mobile-App"
   },
   {
     index: "02",
-    title: "Project Title",
-    category: "Product Design",
+    title: "Wa3e App",
+    category: "Team Work",
     description:
-      "What you designed, why it mattered, and the measurable impact it delivered.",
+      "WA3e mobile app the guide for all parents who have a child has ADHD through , Articles , Communities, Doctors ",
+      cover:"src/assets/Cover Page.jpg",
     accent: "linear-gradient(135deg, oklch(0.5 0.22 320), oklch(0.3 0.18 280))",
+        link: "https://www.behance.net/gallery/233388907/Wa3ei-(ADHD-App)"
+
   },
   {
     index: "03",
-    title: "Project Title",
-    category: "Design System",
+    title: "SAn3a",
+    category: "Team Leader - Case study",
     description:
-      "A glimpse into the system — tokens, components, and the rhythm that ties them together.",
+      "helps clients quickly find skilled and trusted craftsmen",
+      cover:"src/assets/slice2.jpg",
     accent: "linear-gradient(135deg, oklch(0.42 0.24 305), oklch(0.28 0.16 300))",
+        link: "https://www.behance.net/gallery/244582277/San3a(Craftsmen-App)"
+
   },
 ];
 
@@ -129,7 +138,9 @@ function ProjectCard({ project, alt }: { project: Project; alt: boolean }) {
         </p>
         <div className="mt-2 flex items-center justify-between">
           <a
-            href="#"
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground transition-colors group-hover:text-lavender"
           >
             View Case Study
@@ -141,3 +152,13 @@ function ProjectCard({ project, alt }: { project: Project; alt: boolean }) {
     </article>
   );
 }
+
+/*
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin رابط_الر
+git push -u origin main
+
+*/
