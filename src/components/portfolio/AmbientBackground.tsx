@@ -13,55 +13,71 @@ export function AmbientBackground() {
   const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    const list: Particle[] = Array.from({ length: 40 }).map((_, i) => ({
+    // Generates delicate floating dust motes mimicking paper fibers drifting in ambient room light
+    const list: Particle[] = Array.from({ length: 25 }).map((_, i) => ({
       id: i,
       left: Math.random() * 100,
-      size: Math.random() * 2 + 1,
-      delay: Math.random() * 20,
-      duration: 18 + Math.random() * 18,
-      opacity: 0.3 + Math.random() * 0.6,
+      size: Math.random() * 3 + 1, // Subtle organic sizes
+      delay: Math.random() * 15,
+      duration: 20 + Math.random() * 20, // Slow, relaxed fluid motion for a calming scrapbook aesthetic
+      opacity: 0.12 + Math.random() * 0.3,
     }));
     setParticles(list);
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      {/* Animated grid */}
-      <div className="absolute inset-0 grid-bg animate-grid opacity-80" />
-      {/* Vignette */}
+    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-background transition-colors duration-500">
+      
+      {/* Dynamic Notebook sketch grid built directly from the Tailwind v4 custom theme classes */}
+      <div className="absolute inset-0 grid-bg opacity-[0.7] dark:opacity-[0.4] transition-opacity duration-500" />
+      
+      {/* Vignette overlay acting as a soft physical desk lamp shadow across screen edges */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 transition-all duration-500"
         style={{
-          background:
-            "radial-gradient(ellipse at 50% 0%, transparent 0%, oklch(0.13 0.02 285 / 0.4) 60%, oklch(0.1 0.015 285) 100%)",
+          background: "radial-gradient(circle at 50% 50%, transparent 20%, var(--color-border) 70%, rgba(0, 0, 0, 0.05) 100%)",
         }}
       />
-      {/* Floating orbs */}
-      <div className="glow-orb animate-float" style={{ width: 500, height: 500, top: "-10%", left: "-10%" }} />
-      <div
-        className="glow-orb animate-float"
-        style={{ width: 420, height: 420, top: "40%", right: "-10%", animationDelay: "2s" }}
+      
+      {/* Fluid organic ambient glowing orbs - Swaps seamlessly from warm amber to midnight neon pulses */}
+      <div 
+        className="absolute rounded-full opacity-40 dark:opacity-[0.06] blur-[100px] transition-all duration-700 mix-blend-screen dark:mix-blend-lighten" 
+        style={{ 
+          width: 600, 
+          height: 600, 
+          top: "-10%", 
+          left: "-5%", 
+          background: "radial-gradient(circle, var(--color-muted) 0%, transparent 70%)" 
+        }} 
       />
       <div
-        className="glow-orb animate-float"
-        style={{ width: 380, height: 380, bottom: "-10%", left: "30%", animationDelay: "4s" }}
+        className="absolute rounded-full opacity-30 dark:opacity-[0.04] blur-[120px] transition-all duration-700"
+        style={{ 
+          width: 500, 
+          height: 500, 
+          bottom: "10%", 
+          right: "-5%", 
+          background: "radial-gradient(circle, var(--color-accent) 0%, transparent 70%)" 
+        }}
       />
-      {/* Particles */}
+      
+      {/* Micro paper dust particles adapting seamlessly to dark chalk ink and warm sepia ink */}
       {particles.map((p) => (
         <span
           key={p.id}
-          className="absolute rounded-full bg-lavender"
+          className="absolute rounded-full bg-slate-400/20 dark:bg-primary/20 transition-colors duration-500"
           style={{
             left: `${p.left}%`,
             width: p.size,
             height: p.size,
             opacity: p.opacity,
             bottom: -20,
-            boxShadow: "0 0 6px oklch(0.85 0.1 305 / 0.8)",
             animation: `drift ${p.duration}s linear ${p.delay}s infinite`,
           }}
         />
       ))}
+
+      {/* Tactile paper fiber micro-noise overlay wrapper */}
       <div className="noise" />
     </div>
   );

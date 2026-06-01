@@ -5,16 +5,19 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Instrument Serif", "Space Grotesk", Georgia, serif;
+  /* Core typography mapped for a personal, handwritten scrapbook vibe */
+  --font-display: "Instrument Serif", Georgia, serif;
   --font-grotesk: "Space Grotesk", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-hand: "Caveat", "Caveat Brush", cursive;
+  
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -34,39 +37,67 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-glow: var(--glow);
-  --color-lavender: var(--lavender);
 }
 
 :root {
-  --radius: 1rem;
-  --background: oklch(0.12 0.015 295);
-  --foreground: oklch(0.98 0.005 285);
-  --card: oklch(0.16 0.025 295);
-  --card-foreground: oklch(0.98 0.005 285);
-  --popover: oklch(0.16 0.025 295);
-  --popover-foreground: oklch(0.98 0.005 285);
-  --primary: oklch(0.38 0.22 310);
-  --primary-foreground: oklch(0.98 0.005 285);
-  --secondary: oklch(0.2 0.03 300);
-  --secondary-foreground: oklch(0.98 0.005 285);
-  --muted: oklch(0.19 0.025 295);
-  --muted-foreground: oklch(0.7 0.03 285);
-  --accent: oklch(0.5 0.24 308);
-  --accent-foreground: oklch(0.98 0.005 285);
-  --destructive: oklch(0.65 0.22 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.3 0.06 305 / 0.5);
-  --input: oklch(0.3 0.06 305 / 0.5);
-  --ring: oklch(0.5 0.24 308);
-  --glow: oklch(0.45 0.25 308);
-  --lavender: oklch(0.82 0.1 310);
+  --radius: 0.75rem;
+  
+  /* ☀️ Light Mode: Warm Traditional Scrapbook Palette */
+  --background: #fdfaf3;          /* Warm Cream Paper */
+  --foreground: #2b2b2b;          /* Charcoal Ink */
+  --card: #ffffff;
+  --card-foreground: #2b2b2b;
+  --popover: #ffffff;
+  --popover-foreground: #2b2b2b;
+  
+  --primary: #0f8a7d;             /* Organic Teal Ink */
+  --primary-foreground: #ffffff;
+  --secondary: #f9efd9;           /* Kraft Paper Cardboard */
+  --secondary-foreground: #2b2b2b;
+  
+  --muted: #f4ebd0;
+  --muted-foreground: #606060;
+  --accent: #e84a8a;              /* Scrapbook Pink Tape */
+  --accent-foreground: #ffffff;
+  
+  --destructive: #d94e4e;
+  --destructive-foreground: #ffffff;
+  
+  --border: rgba(122, 90, 58, 0.15); /* Soft Sepia Boundary Line */
+  --input: rgba(122, 90, 58, 0.15);
+  --ring: #0f8a7d;
 
-  --gradient-purple: linear-gradient(135deg, oklch(0.45 0.25 310), oklch(0.32 0.2 305));
-  --gradient-glow: radial-gradient(ellipse at center, oklch(0.5 0.25 308 / 0.55), transparent 70%);
-  --gradient-card: linear-gradient(135deg, oklch(0.19 0.04 305 / 0.6), oklch(0.13 0.02 295 / 0.4));
-  --shadow-glow: 0 0 40px oklch(0.5 0.25 308 / 0.45), 0 0 80px oklch(0.5 0.25 308 / 0.2);
-  --shadow-card: 0 8px 32px oklch(0.05 0 0 / 0.5);
+  --shadow-real: 0 10px 30px rgba(60, 40, 80, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-polaroid: 0 14px 30px rgba(60, 40, 80, 0.15);
+}
+
+/* 🌙 Dark Mode: Midnight Journal Theme */
+.dark {
+  --background: #141416;          /* Deep Matte Charcoal Cardboard */
+  --foreground: #e4e4e7;          /* Chalk White Text */
+  
+  --card: #1c1c1e;                /* Cut-out Carbon Sheets */
+  --card-foreground: #e4e4e7;
+  --popover: #1c1c1e;
+  --popover-foreground: #e4e4e7;
+  
+  /* Neon Fluid Gel Ink Palettes */
+  --primary: #4ade80;             /* Bioluminescent Mint Green */
+  --primary-foreground: #0b2512;
+  --secondary: #27272a;           /* Dark Scrap Shreds */
+  --secondary-foreground: #e4e4e7;
+  
+  --muted: #2d2d30;
+  --muted-foreground: #a1a1aa;
+  --accent: #f472b6;              /* Radiant Night Glow Pink */
+  --accent-foreground: #ffffff;
+  
+  --border: rgba(255, 255, 255, 0.08); /* Ultra Thin Precise Matrix Line */
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #4ade80;
+
+  --shadow-real: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --shadow-polaroid: 0 16px 40px rgba(0, 0, 0, 0.6);
 }
 
 @layer base {
@@ -79,93 +110,99 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, h3, h4 { 
+    font-family: var(--font-display); 
+    font-weight: 600;
+    color: var(--color-primary); 
+  }
 }
 
 @layer utilities {
-  .glass {
-    background: linear-gradient(135deg, oklch(1 0 0 / 0.04), oklch(1 0 0 / 0.01));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid oklch(1 0 0 / 0.08);
-  }
-  .glass-card {
+  /* Classic Polaroid & Paper Card Layouts */
+  .scrapbook-card {
     position: relative;
-    background: var(--gradient-card);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid oklch(0.7 0.15 300 / 0.18);
-    border-radius: var(--radius-2xl);
-    box-shadow: var(--shadow-card), inset 0 1px 0 oklch(1 0 0 / 0.06);
-    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    background: var(--color-card); 
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-polaroid);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .glass-card:hover {
-    border-color: oklch(0.78 0.18 300 / 0.5);
-    box-shadow: var(--shadow-glow), inset 0 1px 0 oklch(1 0 0 / 0.1);
-    transform: translateY(-4px);
+  
+  .scrapbook-card:hover {
+    transform: translateY(-6px) rotate(0deg) !important;
+    box-shadow: var(--shadow-real);
   }
+
+  /* Core Organic Ink Text Gradients (Fixed Nesting Syntax Errors) */
   .text-gradient {
-    background: linear-gradient(135deg, oklch(0.98 0.01 290), oklch(0.78 0.14 305));
+    background: linear-gradient(135deg, #0f8a7d, #1aa094);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
+  
+  :is(.dark *) .text-gradient {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+  }
+  
   .text-glow {
-    background: linear-gradient(135deg, oklch(0.85 0.12 305), oklch(0.72 0.2 295));
+    background: linear-gradient(135deg, #e84a8a, #ff6b9d);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
+
+  :is(.dark *) .text-glow {
+    background: linear-gradient(135deg, #f472b6, #f43f5e);
+  }
+
+  /* Notebook Architectural Sketch Grid */
   .grid-bg {
     background-image:
-      linear-gradient(oklch(0.7 0.2 308 / 0.13) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.7 0.2 308 / 0.13) 1px, transparent 1px);
-    background-size: 56px 56px;
+      linear-gradient(rgba(122, 90, 58, 0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(122, 90, 58, 0.15) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
+  
+  :is(.dark *) .grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  }
+
+  /* Tactile Micro-noise Paper Grain Overlays */
   .noise {
-    position: absolute; inset: 0; pointer-events: none; opacity: 0.04;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    position: absolute; 
+    inset: 0; 
+    pointer-events: none; 
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
   }
-  .glow-orb {
-    position: absolute;
-    border-radius: 9999px;
-    background: var(--gradient-glow);
-    filter: blur(60px);
-    pointer-events: none;
+  
+  :is(.dark *) .noise { 
+    opacity: 0.04; 
   }
-  @keyframes float-slow {
-    0%, 100% { transform: translate(0,0); }
-    50% { transform: translate(20px,-30px); }
-  }
-  @keyframes drift {
-    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }
-  }
-  @keyframes pulse-glow {
-    0%, 100% { opacity: 0.6; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
-  }
-  @keyframes grid-shift {
-    0% { background-position: 0 0; }
-    100% { background-position: 60px 60px; }
-  }
-  .animate-float { animation: float-slow 8s ease-in-out infinite; }
-  .animate-grid { animation: grid-shift 20s linear infinite; }
-  .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
-  .magnetic-btn {
+
+  /* Tactile Sticker Button Component */
+  .scrapbook-btn {
     position: relative;
-    background: var(--gradient-purple);
-    color: oklch(0.98 0.005 285);
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
     font-weight: 600;
-    border-radius: 9999px;
-    padding: 0.9rem 1.75rem;
-    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    box-shadow: 0 10px 30px oklch(0.5 0.25 308 / 0.35);
+    border-radius: var(--radius-lg);
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2); 
+    transition: all 0.2s ease;
   }
-  .magnetic-btn:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 0 40px oklch(0.5 0.25 308 / 0.7), 0 0 80px oklch(0.5 0.25 308 / 0.35);
+
+  .scrapbook-btn:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .handwritten {
+    font-family: var(--font-hand);
   }
 }
