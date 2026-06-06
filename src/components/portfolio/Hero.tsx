@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import portrait from "@/assets/eman-portrait.png";
-
+import portrait from "@/assets/me2.png";
 export function Hero() {
   return (
     <section className="relative overflow-hidden min-h-screen flex items-center justify-center px-4 py-24 md:py-32">
@@ -28,6 +27,7 @@ export function Hero() {
         >
           ♥
         </div>
+        
 
         <div
           className="absolute right-[14%] bottom-[14%] text-[#0f8a7d] dark:text-[#4ade80] opacity-80 dark:opacity-60 transition-all"
@@ -85,7 +85,7 @@ export function Hero() {
             dark:shadow-[0_25px_50px_rgba(0,0,0,0.5)]
             border border-neutral-100
             dark:border-neutral-800
-            max-w-[280px]
+            max-w-[360px]
             md:max-w-sm
             w-full
             transition-colors
@@ -108,7 +108,7 @@ export function Hero() {
             className="text-center mt-4 md:mt-5 text-[#0f8a7d] dark:text-[#4ade80] text-2xl md:text-3xl font-bold transition-colors"
             style={{ fontFamily: "var(--font-hand)" }}
           >
-            hello there! 🌸
+            Junior UX/UI Designer🎨
           </p>
         </motion.div>
 
@@ -150,18 +150,18 @@ export function Hero() {
           </div>
 
           <div className="relative z-10 text-center">
-            <h2
+            {/* <h2
               className="text-[#0f8a7d] dark:text-[#4ade80] text-3xl md:text-5xl font-bold transition-colors"
               style={{ fontFamily: "var(--font-hand)" }}
             >
               UX/UI Designer
-            </h2>
-
+            </h2> */}
             <p className="mt-4 md:mt-5 text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto font-sans transition-colors">
-              Designer, dreamer, book lover, and frontend explorer.
-              I enjoy crafting delightful digital experiences filled
+             Not the most experienced designer yet, but definitely one of the most eager to learn.
+           looking for an opportunity to grow, contribute and innovate.
+              {/* I enjoy crafting delightful digital experiences filled
               with thoughtful details, playful interactions, and a
-              touch of personality.
+              touch of personality. */}
             </p>
 
             <p

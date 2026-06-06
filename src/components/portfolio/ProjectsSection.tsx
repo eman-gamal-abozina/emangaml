@@ -5,6 +5,8 @@ import { Reveal } from "./Reveal";
 import project1 from "@/assets/Cover Page.jpg";
 import project2 from "@/assets/cover0.jpg";
 import project3 from "@/assets/slice2.jpg";
+import project4 from "@/assets/coverDonuts.jpg";
+
 
 type Project = {
   title: string;
@@ -61,8 +63,8 @@ const projects: Project[] = [
     category: "Landing Page",
     description:
       "A colorful and engaging donuts landing page featuring a modern UI and playful visual identity.",
-    tags: ["Landing Page", "UI Design", "Web Design", "Food"],
-    image: project3,
+    tags: [],
+    image: project4,
     liveUrl: "https://www.behance.net/gallery/230220809/Donunts-landing-page",
     tilt: 1.5,
     clipColor: "pink",
@@ -223,9 +225,9 @@ export function ProjectsSection() {
                 className="text-[#e84a8a] dark:text-[#f472b6] tracking-widest uppercase font-bold transition-colors"
                 style={{ fontFamily: "var(--font-hand)", fontSize: 18 }}
               >
-                ✦ My Creative Showcase ✦
+                ✿ My Creative Showcase ✿
               </span>
-              <p className="text-slate-400 dark:text-slate-500 text-xs mt-1.5 font-mono">// handcrafted with pixel-perfect love.</p>
+              <p className="text-slate-400 dark:text-slate-500 text-xs mt-1.5 font-mono">handcrafted with pixel-perfect love.</p>
             </div>
 
             {/* كارت ورقة العنوان المتكيف مع الوضع الداكن والنهاري */}
